@@ -1,13 +1,12 @@
 package application;
 
-import tabuleiro.posicao;
+import tabuleiro.Tabuleiro;
 
 public class Xadrez {
 
 	public static void main(String[] args) {
 		
-		posicao pos = new tabuleiro.posicao(3, 5);
-		System.out.println(pos);
+		Tabuleiro tabuleiro = new Tabuleiro(8, 8);
 
 	}
 
