@@ -45,7 +45,7 @@ public class UI {
 			return new PosicaoXadrez(coluna, linha);
 		} catch (RuntimeException e) {
 			throw new InputMismatchException(
-					"ERRO INSTANCIANDO A POSI��O DO XADREZ: Os valores v�lidos s�o de A1 ao H8");
+					"ERRO INSTANCIANDO A POSICAO DO XADREZ: Os valores validos sao de A1 ao H8");
 		}
 	}
 
