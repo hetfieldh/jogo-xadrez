@@ -37,7 +37,7 @@ public class Xadrez {
 				
 				PecaXadrez pecaCapturada = partidaXadrez.performarMovimentacaoPeca(origem, destino);
 				
-				if (capturado != null) {
+				if (pecaCapturada != null) {
 					capturado.add(pecaCapturada);
 				}
 			
@@ -45,8 +45,9 @@ public class Xadrez {
 				System.out.println(e.getMessage());
 				sc.nextLine();
 			} catch (InputMismatchException e) {
-			System.out.println(e.getMessage());
-			sc.nextLine();
+				System.out.println(e.getMessage());
+				sc.nextLine();
+			}
 		}
-		}
-}}
+	}
+}

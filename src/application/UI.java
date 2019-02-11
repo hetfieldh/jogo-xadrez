@@ -47,8 +47,7 @@ public class UI {
 			int linha = Integer.parseInt(s.substring(1));
 			return new PosicaoXadrez(coluna, linha);
 		} catch (RuntimeException e) {
-			throw new InputMismatchException(
-					"ERRO INSTANCIANDO A POSICAO DO XADREZ: Os valores validos sao de A1 ao H8");
+			throw new InputMismatchException("ERRO INSTANCIANDO A POSICAO DO XADREZ: Os valores validos sao de A1 ao H8");
 		}
 	}
 
@@ -59,22 +58,22 @@ public class UI {
 		System.out.println();
 		System.out.println("Turno: " + partidaXadrez.getTurno());
 		System.out.println("Aguardando jogador: " + partidaXadrez.getJogadorAtual());
+		if (partidaXadrez.getCheck()) {
+			System.out.println("CHECK!!!");
+		}
 	}
 	
 	public static void criaTabuleiro(PecaXadrez[][] pecas) {
 		for (int i = 0; i < pecas.length; i++) {
-
 			System.out.print((8 - i) + " ");
-
 			for (int j = 0; j < pecas.length; j++) {
 				criaPeca(pecas[i][j], false);
 			}
-
 			System.out.println();
 		}
 		System.out.println("  a b c d e f g h");
 	}
-
+	
 	public static void criaTabuleiro(PecaXadrez[][] pecas, boolean[][] movimentosPossiveis) {
 		for (int i = 0; i < pecas.length; i++) {
 			System.out.print((8 - i) + " ");
@@ -85,7 +84,7 @@ public class UI {
 		}
 		System.out.println("  a b c d e f g h");
 	}
-
+	
 	private static void criaPeca(PecaXadrez peca, boolean corFundo) {
 		if (corFundo) {
 			System.out.print(ANSI_BLUE_BACKGROUND);
