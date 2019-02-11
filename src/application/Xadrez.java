@@ -19,8 +19,7 @@ public class Xadrez {
 			
 			try {
 				UI.clearScreen();
-				
-				UI.criaTabuleiro(partidaXadrez.getPecas());
+				UI.criarPartida(partidaXadrez);
 				System.out.println();
 				System.out.print("Origem: ");
 				PosicaoXadrez origem = UI.lerPosicaoXadrez(sc);
