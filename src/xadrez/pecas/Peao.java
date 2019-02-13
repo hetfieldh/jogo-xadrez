@@ -12,6 +12,11 @@ public class Peao extends PecaXadrez {
 	}
 
 	@Override
+	public String toString() {
+		return "p";
+	}
+	
+	@Override
 	public boolean[][] movimentosPossiveis() {
 		boolean[][] mat = new boolean[getTabuleiro().getLinhas()][getTabuleiro().getColunas()];
 
@@ -37,13 +42,15 @@ public class Peao extends PecaXadrez {
 			if (getTabuleiro().posicaoExistente(p) && existePecaOponente(p)) {
 				mat[p.getLinha()][p.getColuna()] = true;
 			}
+		
 		} else {
+		
 			p.setValores(posicao.getLinha() + 1, posicao.getColuna());
 			if (getTabuleiro().posicaoExistente(p) && !getTabuleiro().existeUmaPeca(p)) {
 				mat[p.getLinha()][p.getColuna()] = true;
 			}
 			p.setValores(posicao.getLinha() + 2, posicao.getColuna());
-			Posicao p2 = new Posicao(posicao.getLinha() - 1, posicao.getColuna());
+			Posicao p2 = new Posicao(posicao.getLinha() + 1, posicao.getColuna());
 			if (getTabuleiro().posicaoExistente(p) && !getTabuleiro().existeUmaPeca(p)
 					&& getTabuleiro().posicaoExistente(p2) && !getTabuleiro().existeUmaPeca(p2)
 					&& getContadorMovimento() == 0) {
@@ -60,10 +67,4 @@ public class Peao extends PecaXadrez {
 		}
 		return mat;
 	}
-
-	@Override
-	public String toString() {
-		return "p";
-	}
-
 }
